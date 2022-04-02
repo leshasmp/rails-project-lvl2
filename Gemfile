@@ -33,10 +33,11 @@ gem 'rollbar'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'minitest-power_assert', '~> 0.3.1'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'slim_lint'
-  gem 'minitest-power_assert'
   gem 'sqlite3', '~> 1.4'
 end
 

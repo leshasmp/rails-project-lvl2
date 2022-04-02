@@ -81,6 +81,8 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     erubi (1.10.0)
+    faker (1.9.6)
+      i18n (>= 0.7)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -246,9 +248,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  faker (~> 1.6, >= 1.6.6)
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  minitest-power_assert
+  minitest-power_assert (~> 0.3.1)
   pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
