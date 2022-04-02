@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'slim_lint'
+  gem 'minitest-power_assert'
   gem 'sqlite3', '~> 1.4'
 end
 
