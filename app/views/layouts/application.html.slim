@@ -1,0 +1,19 @@
+doctype html
+html.h-100 lang="#{I18n.locale}"
+  head
+    = render 'layouts/shared/head'
+  body.d-flex.flex-column.h-100
+    - if Rails.env.production?
+      = render 'layouts/deps/gtm_body'
+    = render 'layouts/shared/nav'
+    .container.my-4
+      main
+        .row
+          / .col-md-2
+          /   = render 'layouts/shared/menu'
+          .col-md-9
+            - if content_for?(:header)
+              h1.h2.mb-5 = yield :header
+            = yield
+
+    = render 'layouts/shared/footer'

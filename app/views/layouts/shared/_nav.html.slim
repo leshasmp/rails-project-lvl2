@@ -1,0 +1,14 @@
+.container
+  header.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-md-between.py-3.mb-4.border-bottom
+    a.d-flex.align-items-center.mb-2.mb-md-0.me-5.text-dark.text-decoration-none.fs-4(href="/") = t('application_name')
+    ul.nav.nav-pills
+      - if user_signed_in?
+        li.nav-item
+          = link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'Sign Out', destroy_user_session_path, class: 'nav-link', method: :delete, data: { confirm: 'Are you sure?' }
+      - else
+        li.nav-item
+          = link_to 'Sign In', new_user_session_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
