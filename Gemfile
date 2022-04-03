@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'rollbar'
-gem 'simple_form'
 gem 'slim', '~> 3.0', '>= 3.0.6'
 
 group :development, :test do
