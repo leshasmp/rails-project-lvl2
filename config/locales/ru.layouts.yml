@@ -1,0 +1,14 @@
+ru:
+  layouts:
+    shared:
+      nav:
+        main:
+          Главная
+        sign_in:
+          Войти
+        sign_out:
+          Выйти
+        register:
+          Регистрация
+        confirm:
+          Вы уверены?  

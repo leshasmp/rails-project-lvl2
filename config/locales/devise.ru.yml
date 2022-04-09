@@ -1,0 +1,20 @@
+ru:
+  devise:
+    sessions:
+      new:
+        sign_in:
+          Вход
+    shared:
+      links:
+        sign_up:
+          Регистрация
+        sign_in:
+          Войти  
+        forgot_your_password:
+          Забыли пароль?
+      minimum_password_length:
+          (минимум 6 знаков)
+    registrations:
+      new:
+        sign_up:
+          Регистрация

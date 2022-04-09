@@ -1,14 +1,16 @@
-.container
-  header.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-md-between.py-3.mb-4.border-bottom
-    a.d-flex.align-items-center.mb-2.mb-md-0.me-5.text-dark.text-decoration-none.fs-4(href="/") = t('application_name')
-    ul.nav.nav-pills
-      - if user_signed_in?
-        li.nav-item
-          = link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link'
-        li.nav-item
-          = link_to 'Sign Out', destroy_user_session_path, class: 'nav-link', method: :delete, data: { confirm: 'Are you sure?' }
-      - else
-        li.nav-item
-          = link_to 'Sign In', new_user_session_path, class: 'nav-link'
-        li.nav-item
-          = link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+header
+  nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+    .container
+      = link_to t('.main'), root_path, class: 'navbar-brand'
+      button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse id="navbarCollapse"
+        ul.navbar-nav.ms-auto.mb-2.mb-md-0
+          - if user_signed_in?
+            li.nav-item
+              = link_to t('.sign_out'), destroy_user_session_path, class: 'nav-link', method: :delete, data: { confirm: t('.confirm') }
+          - else
+            li.nav-item
+              = nav_menu_item t('.sign_in'), new_user_session_path
+            li.nav-item
+              = nav_menu_item t('.register'), new_user_registration_path

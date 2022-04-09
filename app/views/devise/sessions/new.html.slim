@@ -1,18 +1,16 @@
-h2
-  | Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-  br
-  = f.email_field :email, autofocus: true, autocomplete: 'email'
-  .field
-    = f.label :password
-  br
-  = f.password_field :password, autocomplete: 'current-password'
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit 'Log in'
-= render 'devise/shared/links'
+.row.my-3
+  .col-lg-5.col-md-8.mx-auto
+    h2
+      = t('.sign_in')
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = f.input :email, autofocus: true, input_html: { autocomplete: 'email' },
+        wrapper_html: { class: 'mb-3' }, label_html: { class: 'form-label' }, input_html: { class: 'form-control' }
+      = f.input :password, input_html: { autocomplete: 'current-password' }, wrapper_html: { class: 'mb-3' },
+        label_html: { class: 'form-label' }, input_html: { class: 'form-control' }
+      - if devise_mapping.rememberable?
+        = f.input :remember_me, as: :boolean, boolean_style: :inline, wrapper_html: { class: 'form-check' },
+          input_html: { class: 'form-check-input' }, label_html: { class: 'form-check-label' }
+
+      = f.button :submit, t('.sign_in'), class: 'btn btn-primary mt-4 btn-block'
+
+    = render 'devise/shared/links'
