@@ -31,6 +31,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'rails-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

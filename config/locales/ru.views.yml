@@ -1,0 +1,12 @@
+ru:
+  web:
+    home:
+      index:
+        page_title:
+          Коллективный блог
+    posts:
+      new:
+        title:
+          Новый пост
+        create:
+          Создать пост  

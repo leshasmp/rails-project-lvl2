@@ -1,19 +1,17 @@
-.row.my-3
-  .col-lg-5.col-md-8.mx-auto
-    h2
-      = t('.sign_up')
-    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = f.error_notification
-      = f.input :email, required: true, autofocus: true, input_html: { autocomplete: 'email' },
-        wrapper_html: { class: 'mb-3' }, label_html: { class: 'form-label' }, input_html: { class: 'form-control' }
-      = f.input :password, required: true,
-        hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
-        hint_html: { class: 'form-text text-muted' }, input_html: { autocomplete: 'new-password' }, wrapper_html: { class: 'mb-3' },
-        label_html: { class: 'form-label' }, input_html: { class: 'form-control' }
+= content_for :form_content do
+  h2.mb-4
+    = t('.sign_up')
 
-      = f.input :password_confirmation, required: true, input_html: { autocomplete: 'new-password' },
-        label_html: { class: 'form-label' }, input_html: { class: 'form-control' }
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-      = f.button :submit, t('.sign_up'), class: 'btn-primary', class: 'btn btn-primary mt-4 btn-block'
-      
-    = render 'devise/shared/links'
+    = f.input :email, required: true, autofocus: true, input_html: { autocomplete: 'email' }
+    = f.input :password, required: true,
+      hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
+      hint_html: { class: 'form-text text-muted' }, input_html: { autocomplete: 'new-password' }
+    = f.input :password_confirmation, required: true, input_html: { autocomplete: 'new-password' }
+
+    = f.button :submit, t('.sign_up'), class: 'btn-primary', class: 'btn btn-primary mt-3 btn-block'
+    
+  = render 'devise/shared/links'

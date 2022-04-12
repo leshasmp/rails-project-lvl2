@@ -1,0 +1,19 @@
+ru:
+  simple_form:
+    labels:
+      user:
+        remember_me:
+          Запомнить меня
+        password_confirmation:
+          Подтверждение пароля
+      defaults:
+        password: Пароль
+      post:
+        title:
+          Заголовок
+        body:
+          Содержание
+        post_category:
+          Категория  
+    error_notification:
+      default_message: "Пожалуйста, ознакомьтесь с проблемами ниже:"   

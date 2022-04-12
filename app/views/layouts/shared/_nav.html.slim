@@ -8,6 +8,8 @@ header
         ul.navbar-nav.ms-auto.mb-2.mb-md-0
           - if user_signed_in?
             li.nav-item
+              = link_to t('.new_post'), new_post_path, class: 'nav-link'
+            li.nav-item
               = link_to t('.sign_out'), destroy_user_session_path, class: 'nav-link', method: :delete, data: { confirm: t('.confirm') }
           - else
             li.nav-item
