@@ -12,6 +12,6 @@
       hint_html: { class: 'form-text text-muted' }, input_html: { autocomplete: 'new-password' }
     = f.input :password_confirmation, required: true, input_html: { autocomplete: 'new-password' }
 
-    = f.button :submit, t('.sign_up'), class: 'btn-primary', class: 'btn btn-primary mt-3 btn-block'
-    
+    = f.button :submit, t('.sign_up'), class: 'btn btn-primary mt-3 btn-block'
+
   = render 'devise/shared/links'

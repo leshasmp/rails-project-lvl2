@@ -1,7 +1,6 @@
 = content_for :form_content do
   h2.mb-4
     = t('.title')
-    
   = simple_form_for @post do |f|
     = f.error_notification
     = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?

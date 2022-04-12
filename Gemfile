@@ -28,15 +28,15 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'rails-i18n'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim', '~> 3.0', '>= 3.0.6'
-gem 'rails-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   gem 'minitest-power_assert', '~> 0.3.1'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
