@@ -10,4 +10,4 @@
     = f.association :post_category, as: :select
     = f.input :creator, as: :hidden, input_html: { value: current_user.id }
 
-    = f.button :submit, t('.create'), class: 'btn btn-primary mt-3 btn-block'
+    = f.button :submit, t('web.posts.comments.create'), class: 'btn btn-primary mt-3 btn-block'

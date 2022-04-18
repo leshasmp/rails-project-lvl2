@@ -7,6 +7,8 @@ class Web::PostsController < Web::ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @user = User.find @post.creator
+    @comments = PostComment.where(ancestry: nil).all
   end
 
   def new

@@ -13,7 +13,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       title: Faker::Movies::Ghostbusters.character,
       body: Faker::Movies::Ghostbusters.quote,
       post_category_id: @post_category.id,
-      user_id: @user.id
+      creater: @user
     }
   end
 

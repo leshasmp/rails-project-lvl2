@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: One comment
+  post: one
+  email: test@test.ru
+
+two:
+  content: Two comment
+  post: two
+  email: test@test.ru

@@ -3,5 +3,5 @@
 one:
   title: MyString
   body: MyText
-  user_id: 1
+  creator: 1
   post_category_id: 1

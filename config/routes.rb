@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   scope module: :web do
     root 'home#index'
-    resources :posts
+    resources :posts do
+      scope module: :posts do
+        resources :comments
+      end
+    end
   end
 end
