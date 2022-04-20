@@ -16,7 +16,7 @@ ru:
         title:
           Комментарий
         day_ago:
-          zero: 
+          zero: ""
           one: "%{count} день"
           few: "%{count} дня"
           many: "%{count} дней"

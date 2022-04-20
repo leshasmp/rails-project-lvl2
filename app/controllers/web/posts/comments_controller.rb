@@ -14,8 +14,7 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
 
   private
 
-  # Only allow a list of trusted parameters through.
   def comment_params
-    params.require(:post_comment).permit(:content, :email, :parent_id)
+    params.require(:post_comment).permit(:content, :parent_id).merge(email: current_user.email)
   end
 end
