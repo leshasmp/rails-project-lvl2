@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   scope module: :web do
     root 'home#index'
-    resources :posts do
+    resources :posts, only: [:index, :show, :new, :create] do
       scope module: :posts do
-        resources :comments
-        resources :likes
+        resources :comments, only: [:create]
+        resources :likes, only: [:create, :destroy]
       end
     end
   end
