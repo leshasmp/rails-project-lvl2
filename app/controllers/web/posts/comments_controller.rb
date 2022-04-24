@@ -8,7 +8,7 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
     if @comment.save
       redirect_to @resource_post, notice: t('.success')
     else
-      redirect_to @resource_post
+      redirect_to @resource_post, notice: t('.error')
     end
   end
 

@@ -3,6 +3,10 @@ ru:
     models:
       post_category:
         Категория
+      post_comment:
+        Комментарий
+      post:
+        Пост    
     attributes:
       user:
         email:

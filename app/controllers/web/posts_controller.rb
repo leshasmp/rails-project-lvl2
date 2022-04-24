@@ -14,6 +14,7 @@ class Web::PostsController < Web::ApplicationController
 
   def new
     @post = Post.new
+    redirect_to root_path, notice: t('devise.failure.user.unauthenticated') unless user_signed_in?
   end
 
   def create

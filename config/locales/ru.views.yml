@@ -23,6 +23,13 @@ ru:
           other: "%{count} дня"
       comments:
         create:
-          Создать комментарий
+          error:
+            Комментарий не может быть пустым
         reply:
           Ответить
+      create:
+        success:
+          Пост успешно создан
+      form:
+        sign_in:
+          Войти    

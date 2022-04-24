@@ -33,6 +33,7 @@ gem 'rails-i18n'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'flash_rails_messages'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
