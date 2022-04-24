@@ -12,9 +12,9 @@ class Web::Posts::LikesController < Web::Posts::ApplicationController
 
   def destroy
     resource_post
-    @like = PostLike.where(user_id: current_user.id).take
+    @like = PostLike.find_by(id: params[:id], post_id: params[:post_id])
 
-    @like.destroy
+    @like&.destroy
 
     redirect_to @resource_post
   end
