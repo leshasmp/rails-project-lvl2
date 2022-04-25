@@ -7,9 +7,8 @@ class Web::PostsController < Web::ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @user = User.find @post.user_id
-    @comments = PostComment.where(ancestry: nil).all
-    @likes = PostLike.where(post_id: @post.id).all
+    @comments = @post.post_comments.where(ancestry: nil).all
+    @likes = @post.post_likes
   end
 
   def new

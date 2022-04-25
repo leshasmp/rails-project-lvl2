@@ -2,7 +2,7 @@
     hr.my-2
     .d-flex[id="#{comment.id}"]
       .mr-auto
-        span.me-1 = comment.email
+        span.me-1 = comment.user.email
         span.text-muted = l(comment.created_at, format: :short)
         p.mr-2 = comment.content
     .mb-2

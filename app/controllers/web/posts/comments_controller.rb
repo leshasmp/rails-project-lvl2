@@ -6,7 +6,7 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
     @comment = @resource_post.post_comments.build(comment_params)
 
     if @comment.save
-      redirect_to @resource_post, notice: t('.success')
+      redirect_to @resource_post
     else
       redirect_to @resource_post, notice: t('.error')
     end
@@ -15,6 +15,6 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
   private
 
   def comment_params
-    params.require(:post_comment).permit(:content, :parent_id).merge(email: current_user.email)
+    params.require(:post_comment).permit(:content, :parent_id).merge(user_id: current_user.id)
   end
 end
