@@ -7,8 +7,8 @@ class Web::PostsController < Web::ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @comments = @post.post_comments.where(ancestry: nil).all
-    @likes = @post.post_likes
+    @comments = @post.comments.where(ancestry: nil).all
+    @likes = @post.likes
     @creator = User.find @post.user_id
   end
 
@@ -30,6 +30,6 @@ class Web::PostsController < Web::ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :post_category_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :category_id).merge(user_id: current_user.id)
   end
 end

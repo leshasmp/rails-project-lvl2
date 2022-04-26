@@ -1,6 +1,6 @@
-class CreatePostComments < ActiveRecord::Migration[6.1]
+class CreateComments < ActiveRecord::Migration[6.1]
   def change
-    create_table :post_comments do |t|
+    create_table :comments do |t|
       t.text :content
       t.references :user, null: false, foreign_key: true
       t.references :post, null: false, foreign_key: true
@@ -8,7 +8,7 @@ class CreatePostComments < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_column :post_comments, :ancestry, :string
-    add_index :post_comments, :ancestry
+    add_column :comments, :ancestry, :string
+    add_index :comments, :ancestry
   end
 end
