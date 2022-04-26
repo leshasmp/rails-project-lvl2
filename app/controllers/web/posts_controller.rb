@@ -9,6 +9,7 @@ class Web::PostsController < Web::ApplicationController
     @post = Post.find params[:id]
     @comments = @post.post_comments.where(ancestry: nil).all
     @likes = @post.post_likes
+    @creator = User.find @post.user_id
   end
 
   def new

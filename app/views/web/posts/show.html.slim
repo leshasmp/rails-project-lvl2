@@ -7,7 +7,7 @@ p
 .d-flex.justify-content-between.mt-5
   #post-section
     span.me-2
-      = @post.user.email
+      = @creator.email
     span
       = t('web.posts.show.day_ago', count: created_day_ago(@post.created_at))
   #likes-section
