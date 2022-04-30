@@ -5,14 +5,14 @@ require 'test_helper'
 class PostsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   setup do
-    @category = categories(:one)
+    @post_category = post_categories(:one)
     @post = posts(:one)
     @user = users(:one)
     sign_in @user
     @attrs = {
       title: Faker::Movies::Ghostbusters.character,
       body: Faker::Movies::Ghostbusters.quote,
-      category_id: @category.id
+      post_category_id: @post_category.id
     }
   end
 
@@ -30,7 +30,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show post' do
-    get post_url(@post)
+    get posts_url(@post)
     assert_response :success
   end
 end

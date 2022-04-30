@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Web::PostsController < Web::ApplicationController
+  def index
+    @posts = Post.all
+  end
+
   def show
     @post = Post.find params[:id]
     @comments = @post.comments.where(ancestry: nil).all
@@ -26,6 +30,6 @@ class Web::PostsController < Web::ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :category_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :post_category_id).merge(user_id: current_user.id)
   end
 end

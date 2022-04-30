@@ -4,4 +4,4 @@ one:
   title: MyString
   body: MyText
   creator: one
-  category: one
+  post_category: one

@@ -3,7 +3,7 @@
 require 'faker'
 
 5.times do
-  Category.create!(
+  PostCategory.create!(
     name: Faker::Movie.title
   )
 end
