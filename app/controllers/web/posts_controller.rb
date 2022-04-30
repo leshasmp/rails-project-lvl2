@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
 class Web::PostsController < Web::ApplicationController
-  def index
-    @posts = Post.all
-  end
-
   def show
     @post = Post.find params[:id]
-    @comments = @post.comments.where(ancestry: nil).all
-    @likes = @post.likes
+    @comments = @post.post_comments.where(ancestry: nil).all
+    @likes = @post.post_likes
     @creator = User.find @post.user_id
   end
 

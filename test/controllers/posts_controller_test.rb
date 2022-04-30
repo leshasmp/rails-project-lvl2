@@ -30,7 +30,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show post' do
-    get posts_url(@post)
+    get post_url(@post)
     assert_response :success
   end
 end

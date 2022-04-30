@@ -4,6 +4,8 @@ ru:
       index:
         page_title:
           Коллективный блог
+        likes:
+          "Понравилось: %{count}"  
     posts:
       new:
         title:

@@ -10,3 +10,10 @@
               = link_to post.title, post, class: 'link-dark text-decoration-none'
             .card-text.mb-2
               = post.body
+            .text-right.small.text-muted.mt-auto  
+              span.me-2
+                = t('.likes', count: post.post_likes.count)
+              span.me-2
+                = t('web.posts.show.day_ago', count: created_day_ago(post.created_at))
+              span
+                = post.creator.email

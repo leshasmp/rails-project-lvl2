@@ -3,7 +3,7 @@
 class Web::Posts::LikesController < Web::Posts::ApplicationController
   def create
     resource_post
-    @like = current_user.likes.new({ post_id: @resource_post.id })
+    @like = current_user.post_likes.new({ post_id: @resource_post.id })
 
     @like.save
 
@@ -11,7 +11,7 @@ class Web::Posts::LikesController < Web::Posts::ApplicationController
   end
 
   def destroy
-    @like = current_user.likes.find(params[:id])
+    @like = current_user.post_likes.find(params[:id])
     post = @like.post
     @like.destroy
 
