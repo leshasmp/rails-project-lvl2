@@ -13,7 +13,7 @@ ru:
           Заголовок
         body:
           Содержание
-        post_category:
+        category:
           Категория
     error_notification:
       default_message: "Пожалуйста, ознакомьтесь с проблемами ниже:"   

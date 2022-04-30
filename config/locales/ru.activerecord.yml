@@ -1,9 +1,9 @@
 ru:
   activerecord:
     models:
-      post_category:
+      category:
         Категория
-      post_comment:
+      comment:
         Комментарий
       post:
         Пост    
@@ -20,5 +20,5 @@ ru:
           Заголовок
         body:
           Содержание
-        post_category:
+        category:
           Категория

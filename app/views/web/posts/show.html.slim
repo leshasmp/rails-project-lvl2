@@ -1,8 +1,7 @@
 = content_for :page_title do
   = @post.title
 p
-  strong.me-2 = t('.body')
-  == @post.body
+  = @post.body
 
 .d-flex.justify-content-between.mt-5
   #post-section
@@ -12,7 +11,7 @@ p
       = t('web.posts.show.day_ago', count: created_day_ago(@post.created_at))
   #likes-section
     span.me-2
-      = @post.likes.count
+      = @post.likes.size
     - if user_signed_in?
       - like = current_user.likes.find_by(post_id: @post)
       - if like.nil?

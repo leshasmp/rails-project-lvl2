@@ -8,13 +8,13 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
     if @comment.save
       redirect_to @resource_post
     else
-      redirect_to @resource_post, notice: t('.error')
+      redirect_to @resource_post, flash: { error: t('.error') }
     end
   end
 
   private
 
   def comment_params
-    params.require(:post_comment).permit(:content, :parent_id).merge(user_id: current_user.id)
+    params.require(:comment).permit(:content, :parent_id).merge(user_id: current_user.id)
   end
 end

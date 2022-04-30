@@ -7,5 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
-  has_many :likes, class_name: 'PostLike', dependent: :destroy
+  has_many :likes, dependent: :destroy
 end
