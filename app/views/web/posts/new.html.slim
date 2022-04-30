@@ -4,6 +4,6 @@
   = simple_form_for @post do |f|
     = f.input :title, required: true
     = f.input :body, required: true
-    = f.association :post_category, as: :select
+    = f.association :category, as: :select
 
     = f.button :submit, class: 'btn btn-primary mt-3 btn-block'
