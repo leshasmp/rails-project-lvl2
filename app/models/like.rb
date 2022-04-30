@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class PostLike < ApplicationRecord
-  self.table_name = 'likes'
+class Like < ApplicationRecord
   belongs_to :post
   belongs_to :user
 
