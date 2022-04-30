@@ -3,8 +3,8 @@
 class Web::PostsController < Web::ApplicationController
   def show
     @post = Post.find params[:id]
-    @comments = @post.post_comments.where(ancestry: nil).all
-    @likes = @post.post_likes
+    @comments = @post.comments.where(ancestry: nil).all
+    @likes = @post.likes
     @creator = User.find @post.user_id
   end
 
