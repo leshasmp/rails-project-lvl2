@@ -18,15 +18,17 @@ ru:
         title:
           Комментарий
         day_ago:
-          zero: ""
-          one: "%{count} день"
-          few: "%{count} дня"
-          many: "%{count} дней"
-          other: "%{count} дня"
+          zero: "%{count}"
+          one: "%{count}"
+          few: "%{count}"
+          many: "%{count}"
+          other: "%{count}"
       comments:
         create:
           error:
             Комментарий не может быть пустым
+          success:
+            Комментарий успешно создан 
         reply:
           Ответить
       create:
@@ -34,4 +36,13 @@ ru:
           Пост успешно создан
       form:
         sign_in:
-          Войти    
+          Войти
+    pagination:
+      first:
+        Первый
+      next:
+        Следующий
+      last:
+        Последний
+      previous:
+        Предыдущий 

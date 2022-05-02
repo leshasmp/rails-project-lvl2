@@ -1,53 +1,47 @@
 = content_for :page_title do
   = @post.title
 p
-  strong.me-2 = t('.body')
-  == @post.body
+  = @post.body
 
-.d-flex.justify-content-between.mt-5
+.d-flex.justify-content-between.mt-5.mb-2
   #post-section
     span.me-2
-      = @creator.email
+      = @post.creator.email
     span
-      = t('web.posts.show.day_ago', count: created_day_ago(@post.created_at))
+      = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(@post.created_at))
   #likes-section
     span.me-2
       = @post.likes.count
-    - if user_signed_in?
-      - like = current_user.likes.find_by(post_id: @post)
-      - if like.nil?
-        = link_to post_likes_path(@post), method: :post do
-          i.fa-regular.fa-thumbs-up.fa-lg.text-secondary
-      - else
-        = link_to post_like_path(@post, like), method: :delete do
-          i.fa-regular.fa-thumbs-up.fa-lg.text-secondary
-    - else
-      = link_to new_user_session_path do
+    - if @like.nil?
+      = link_to post_likes_path(@post), method: :post do
         i.fa-regular.fa-thumbs-up.fa-lg.text-secondary
-.lead.mb-3
-  = t('.comment')
+    - else
+      = link_to post_like_path(@post), method: :delete do
+        i.fa-regular.fa-thumbs-up.fa-lg.text-secondary
 
-  - if user_signed_in?
+- if user_signed_in?
+    .lead.mb-3
+      = t('.comment')
     = simple_form_for @post.comments.build, url: post_comments_path(@post) do |f|
       = f.input :content, label: false, as: :text
       = f.button :submit, class: 'btn btn-primary mb-4'
 
-- @comments.each do |comment|
-  - unless comment.id.nil?
+- @comments.each do |comment, value|
+  - if comment.id.present?
     .card.mb-4
       .card-header.small.mb-2.d-flex
         #comment
           span.font-weight-bold
             = comment.user.email
           span.mx-2.font-weight-light
-            = t('web.posts.show.day_ago', count: created_day_ago(comment.created_at))
+            = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(comment.created_at))
       .card-body.d-flex
         .w-100
           .mb-3
             = comment.content
           .small
-            - if comment.has_children?
-              = render partial: 'subcomments', locals: { post: @post, collection: comment.children }
+            - unless value.empty?
+              = render partial: 'web/posts/comments/comments', locals: { post: @post, collection: value }
       hr.my-2
       .mb-2.m-4
         = render 'form', post: @post, comment: comment

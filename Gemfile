@@ -30,6 +30,7 @@ gem 'ancestry'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'flash_rails_messages'
+gem 'kaminari'
 gem 'rails-i18n'
 gem 'rollbar'
 gem 'simple_form'

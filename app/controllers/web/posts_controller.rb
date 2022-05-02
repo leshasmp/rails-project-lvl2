@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 class Web::PostsController < Web::ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
+
   def show
     @post = Post.find params[:id]
-    @comments = @post.comments.where(ancestry: nil).all
-    @likes = @post.likes
-    @creator = User.find @post.user_id
+    @comments = @post.comments.arrange
+    @like = current_user.likes.find_by(post_id: @post) if user_signed_in?
   end
 
   def new
     @post = Post.new
-    redirect_to root_path, notice: t('devise.failure.user.unauthenticated') unless user_signed_in?
   end
 
   def create

@@ -18,8 +18,4 @@ module ApplicationHelper
       end
     end
   end
-
-  def created_day_ago(date)
-    ((Time.zone.now - date) / 60 / 60 / 24).to_i
-  end
 end

@@ -1,0 +1,12 @@
+- collection.each do |comment, value|
+  hr.my-2
+  .d-flex[id="#{comment.id}"]
+    .mr-auto
+      span.me-1 = comment.user.email
+      span.text-muted = l(comment.created_at, format: :short)
+      p.mr-2 = comment.content
+  .mb-2
+    = render 'form', post: post, comment: comment
+    - unless value.empty?
+      .ms-4
+        = render partial: 'web/posts/comments/comments', locals: { post: post, collection: value }

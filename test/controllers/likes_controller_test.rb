@@ -10,10 +10,9 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
   end
 
-  test 'should create post' do
+  test 'should create like' do
     post post_likes_url(@post)
-
-    post = PostLike.where(user_id: @user).take
+    post = PostLike.find_by(user_id: @user)
 
     assert_redirected_to post_url(@post)
     assert { post }

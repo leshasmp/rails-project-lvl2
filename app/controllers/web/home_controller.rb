@@ -2,6 +2,6 @@
 
 class Web::HomeController < Web::ApplicationController
   def index
-    @posts = Post.includes(:creator)
+    @posts = Post.includes(:creator).page params[:page]
   end
 end
