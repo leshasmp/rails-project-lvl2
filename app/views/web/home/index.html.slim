@@ -1,20 +1,19 @@
 - content_for :page_title do
   = t('.page_title')
 .row
-  - unless @posts&.nil?
-    - @posts.each do |post|
-      .col-md-12
-        .card.mb-3
-          .card-body
-            h5.card-title
-              = link_to post.title, post, class: 'link-dark text-decoration-none'
-            .card-text.mb-2
-              = post.body
-            .text-right.small.text-muted.mt-auto
-              span.me-2
-                = t('.likes', count: post.likes.count)
-              span.me-2
-                = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(post.created_at))
-              span
-                = post.creator.email
-    = paginate @posts, theme: 'bootstrap5'
+  - @posts.each do |post|
+    .col-md-12
+      .card.mb-3
+        .card-body
+          h5.card-title
+            = link_to post.title, post, class: 'link-dark text-decoration-none'
+          .card-text.mb-2
+            = post.body
+          .text-right.small.text-muted.mt-auto
+            span.me-2
+              = t('.likes', count: post.likes.count)
+            span.me-2
+              = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(post.created_at))
+            span
+              = post.creator.email
+  = paginate @posts, theme: 'bootstrap5'

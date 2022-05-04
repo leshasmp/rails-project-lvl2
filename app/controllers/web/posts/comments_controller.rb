@@ -4,13 +4,12 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
   before_action :authenticate_user!
 
   def create
-    resource_post
-    @comment = @resource_post.comments.build(comment_params)
+    @comment = resource_post.comments.build(comment_params)
 
     if @comment.save
-      redirect_to @resource_post, notice: t('.success')
+      redirect_to resource_post, notice: t('.success')
     else
-      redirect_to @resource_post, flash: { error: t('.error') }
+      redirect_to resource_post, flash: { error: t('.error') }
     end
   end
 

@@ -26,22 +26,21 @@ p
       = f.input :content, label: false, as: :text
       = f.button :submit, class: 'btn btn-primary mb-4'
 
-- @comments.each do |comment, value|
-  - if comment.id.present?
-    .card.mb-4
-      .card-header.small.mb-2.d-flex
-        #comment
-          span.font-weight-bold
-            = comment.user.email
-          span.mx-2.font-weight-light
-            = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(comment.created_at))
-      .card-body.d-flex
-        .w-100
-          .mb-3
-            = comment.content
-          .small
-            - unless value.empty?
-              = render partial: 'web/posts/comments/comments', locals: { post: @post, collection: value }
-      hr.my-2
-      .mb-2.m-4
-        = render 'form', post: @post, comment: comment
+- @comments.each do |comment, nested_comments|
+  .card.mb-4
+    .card-header.small.mb-2.d-flex
+      #comment
+        span.font-weight-bold
+          = comment.user.email
+        span.mx-2.font-weight-light
+          = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(comment.created_at))
+    .card-body.d-flex
+      .w-100
+        .mb-3
+          = comment.content
+        .small
+          - unless nested_comments.empty?
+            = render partial: 'web/posts/comments/comments', locals: { post: @post, collection: nested_comments }
+    hr.my-2
+    .mb-2.m-4
+      = render 'form', post: @post, comment: comment

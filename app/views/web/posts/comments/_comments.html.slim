@@ -1,4 +1,4 @@
-- collection.each do |comment, value|
+- collection.each do |comment, nested_comments|
   hr.my-2
   .d-flex[id="#{comment.id}"]
     .mr-auto
@@ -7,6 +7,6 @@
       p.mr-2 = comment.content
   .mb-2
     = render 'form', post: post, comment: comment
-    - unless value.empty?
+    - unless nested_comments.empty?
       .ms-4
-        = render partial: 'web/posts/comments/comments', locals: { post: post, collection: value }
+        = render partial: 'web/posts/comments/comments', locals: { post: post, collection: nested_comments }
