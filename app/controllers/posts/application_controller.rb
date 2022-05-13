@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::Posts::ApplicationController < Web::ApplicationController
+class Posts::ApplicationController < ApplicationController
   def resource_post
     @resource_post ||= Post.find params[:post_id]
   end

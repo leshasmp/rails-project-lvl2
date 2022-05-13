@@ -1,48 +1,47 @@
 ru:
-  web:
-    home:
-      index:
-        page_title:
-          Коллективный блог
-        likes:
-          "Понравилось: %{count}"  
-    posts:
-      new:
-        title:
-          Новый пост
-        create:
-          Создать пост  
-      show:
-        comment:
-          Комментарий
-        title:
-          Комментарий
-        day_ago:
-          zero: "%{count}"
-          one: "%{count}"
-          few: "%{count}"
-          many: "%{count}"
-          other: "%{count}"
-      comments:
-        create:
-          error:
-            Комментарий не может быть пустым
-          success:
-            Комментарий успешно создан 
-        reply:
-          Ответить
+  home:
+    index:
+      page_title:
+        Коллективный блог
+      likes:
+        "Понравилось: %{count}"  
+  posts:
+    new:
+      title:
+        Новый пост
       create:
+        Создать пост  
+    show:
+      comment:
+        Комментарий
+      title:
+        Комментарий
+      day_ago:
+        zero: "%{count}"
+        one: "%{count}"
+        few: "%{count}"
+        many: "%{count}"
+        other: "%{count}"
+    comments:
+      create:
+        error:
+          Комментарий не может быть пустым
         success:
-          Пост успешно создан
-      form:
-        sign_in:
-          Войти
-    pagination:
-      first:
-        Первый
-      next:
-        Следующий
-      last:
-        Последний
-      previous:
-        Предыдущий 
+          Комментарий успешно создан 
+      reply:
+        Ответить
+    create:
+      success:
+        Пост успешно создан
+    form:
+      sign_in:
+        Войти
+  pagination:
+    first:
+      Первый
+    next:
+      Следующий
+    last:
+      Последний
+    previous:
+      Предыдущий 

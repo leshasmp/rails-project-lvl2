@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::Posts::CommentsController < Web::Posts::ApplicationController
+class Posts::CommentsController < Posts::ApplicationController
   before_action :authenticate_user!
 
   def create

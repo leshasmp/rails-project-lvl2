@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::Posts::LikesController < Web::Posts::ApplicationController
+class Posts::LikesController < Posts::ApplicationController
   before_action :authenticate_user!
 
   def create

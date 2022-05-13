@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::PostsController < Web::ApplicationController
+class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def show

@@ -1,0 +1,10 @@
+.row.my-3
+  .col-lg-5.col-md-8.mx-auto
+    h2.mb-4
+      = t('.title')
+    = simple_form_for @post do |f|
+      = f.input :title
+      = f.input :body
+      = f.association :category, as: :select
+
+      = f.button :submit, class: 'btn btn-primary mt-3 btn-block'

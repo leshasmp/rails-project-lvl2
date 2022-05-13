@@ -1,4 +1,4 @@
-= link_to t('web.posts.comments.reply'), "#new_post_comment-#{comment.id}", class: 'd-block small text-muted collapsed',
+= link_to t('posts.comments.reply'), "#new_post_comment-#{comment.id}", class: 'd-block small text-muted collapsed',
   data: { bs_toggle: 'collapse' }, aria: { expanded: 'false' }
 .collapse[id="new_post_comment-#{comment.id}" data-bs-target="#new_post_comment-#{comment.id}"]
   - if user_signed_in?

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::HomeController < Web::ApplicationController
+class HomeController < ApplicationController
   def index
     @posts = Post.includes(:creator).page params[:page]
   end

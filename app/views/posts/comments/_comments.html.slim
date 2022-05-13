@@ -9,4 +9,4 @@
     = render 'form', post: post, comment: comment
     - unless nested_comments.empty?
       .ms-4
-        = render partial: 'web/posts/comments/comments', locals: { post: post, collection: nested_comments }
+        = render partial: 'posts/comments/comments', locals: { post: post, collection: nested_comments }

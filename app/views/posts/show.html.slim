@@ -8,7 +8,7 @@ p
     span.me-2
       = @post.creator.email
     span
-      = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(@post.created_at))
+      = t('posts.show.day_ago', count: distance_of_time_in_words_to_now(@post.created_at))
   #likes-section
     span.me-2
       = @post.likes.count
@@ -33,14 +33,14 @@ p
         span.font-weight-bold
           = comment.user.email
         span.mx-2.font-weight-light
-          = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(comment.created_at))
+          = t('posts.show.day_ago', count: distance_of_time_in_words_to_now(comment.created_at))
     .card-body.d-flex
       .w-100
         .mb-3
           = comment.content
         .small
           - unless nested_comments.empty?
-            = render partial: 'web/posts/comments/comments', locals: { post: @post, collection: nested_comments }
+            = render partial: 'posts/comments/comments', locals: { post: @post, collection: nested_comments }
     hr.my-2
     .mb-2.m-4
       = render 'form', post: @post, comment: comment

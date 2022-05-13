@@ -13,7 +13,7 @@
             span.me-2
               = t('.likes', count: post.likes.count)
             span.me-2
-              = t('web.posts.show.day_ago', count: distance_of_time_in_words_to_now(post.created_at))
+              = t('posts.show.day_ago', count: distance_of_time_in_words_to_now(post.created_at))
             span
               = post.creator.email
   = paginate @posts, theme: 'bootstrap5'
